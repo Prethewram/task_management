@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .main-content {
+            padding: 2rem 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="main-content">
+        <a class="nav-link" href="index.html">
+            <i class="fas fa-cogs me-2"></i> Task Management
+        </a><br>
+        <a href="add_task.html"><div class="mb-3">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                <i class="fas fa-plus me-2"></i> Add Task
+            </button>
+        </div></a>
+
+        <!-- Task Table -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Status</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Assigned To</th>
+                    <th>Due Date</th>
+                    <th>Completion Report</th>
+                    <th>Worked Hours</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Pending</td>
+                    <td>Task One</td>
+                    <td>Description for task one.</td>
+                    <td>John Doe</td>
+                    <td>2023-12-31</td>
+                    <td>Pending</td>
+                    <td>Nil</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editTaskModal">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Pending</td>
+                    <td>Task Two</td>
+                    <td>Description for task two.</td>
+                    <td>Jane Smith</td>
+                    <td>2023-11-30</td>
+                    <td>In Progress</td>
+                    <td>Nil</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editTaskModal">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Add more task rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add Task Modal -->
+    <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTaskModalLabel">Add Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="taskTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="taskTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="taskDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="assignedTo" class="form-label">Assigned To</label>
+                            <input type="text" class="form-control" id="assignedTo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dueDate" class="form-label">Due Date</label>
+                            <input type="date" class="form-control" id="dueDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskStatus" class="form-label">

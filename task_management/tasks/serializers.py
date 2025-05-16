@@ -18,7 +18,6 @@ class TaskSerializer(serializers.ModelSerializer):
         read_only_fields = ['created_by', 'created_at', 'updated_at']
     
     def validate(self, data):
-        # When task is marked as completed, ensure completion_report and worked_hours are provided
         if 'status' in data and data['status'] == 'completed':
             if not data.get('completion_report'):
                 raise serializers.ValidationError(
